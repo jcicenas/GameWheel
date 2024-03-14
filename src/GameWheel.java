@@ -47,11 +47,11 @@ public class GameWheel {
     }
     public void split(){
         for (Slice s : this.slices) {
-            if (s.getColor() == "Blue") {
+            if (s.getColor().equals("Blue")) {
                 this.blue.add(s);
-            }else if (s.getColor() == "Black") {
+            }else if (s.getColor().equals("Black")) {
                 this.black.add(s);
-            }else if (s.getColor() == "Red") {
+            }else if (s.getColor().equals("Red")) {
                 this.red.add(s);
             }
         }
@@ -65,17 +65,17 @@ public class GameWheel {
         this.slices.clear();
         int x  = 0;
         for (Integer i : clonedBluepos) {
-            this.slices.add(i, blue.get(x));
+            this.slices.add(blue.get(x));
             x++;
         }
         x = 0;
         for (Integer i : clonedRedpos) {
-            this.slices.add(i, red.get(x));
+            this.slices.add(red.get(x));
             x++;
         }
         x = 0;
         for (Integer i : clonedBlackpos) {
-            this.slices.add(i, black.get(x));
+            this.slices.add(black.get(x));
             x++;
         }
     }
