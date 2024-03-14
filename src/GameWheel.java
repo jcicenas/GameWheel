@@ -96,10 +96,10 @@ public class GameWheel {
             if (i == 0 || i == 5 || i == 10 || i == 15) {
                 this.slices.add(this.black.get(blackc));
                 blackc++;
-            }else if(even = true){
+            }else if(even == true){
                 this.slices.add(this.blue.get(bluec));
                 bluec++;
-            }else if(even = false){
+            }else if(even == false){
                 this.slices.add(this.red.get(redc));
                 redc++;
             }
@@ -122,15 +122,15 @@ public class GameWheel {
 
     private void sortingalg(ArrayList<Slice> tlist){
         for (int i = 0; i < tlist.size() - 1; i++) {
-            for (int j = 1; j < tlist.size()-1; j++) {
-                if(tlist.get(j).getPrizeAmount() > tlist.get(i).getPrizeAmount()){
-                    Slice temp = tlist.get(j);
-                    tlist.remove(j);
-                    tlist.add(i, temp);
+            for (int j = i + 1; j < tlist.size(); j++) {
+                if (tlist.get(j).getPrizeAmount() > tlist.get(i).getPrizeAmount()) {
+                    Collections.swap(tlist, i, j);
                 }
             }
         }
+
     }
-
-
 }
+
+
+
