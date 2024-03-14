@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Collections;
 
 public class GameWheel {
     // Main list of slices making up the wheel
